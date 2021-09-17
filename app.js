@@ -38,7 +38,7 @@ function convertDatetoStr(date){
     
 }
 
-function dateAllFormat(){
+function dateAllFormat(date5){
     var dateStr = convertDatetoStr(date);
 
     var ddmmyyyy = dateStr.day + dateStr.month+ dateStr.year
@@ -54,7 +54,7 @@ function dateAllFormat(){
 
 function checkPalidromeAll(date){
     var listOfPalindrome= dateAllFormat(date)
-    console.log(listOfPalindrome)
+    
 
     var isaPalindrome = false;
     for(var i = 0; i< listOfPalindrome.length;i++){
@@ -67,9 +67,7 @@ function checkPalidromeAll(date){
     return isaPalindrome
 }
 
-function getNextPalindrome(date){
 
-}
 
 function isLeapYear(year){
     if(year%400===0){
@@ -146,7 +144,7 @@ function getNextpalindromeDate(date){
 }
 var date = {
     day: 31,
-    month:12 ,
+    month:12,
     year:2020
-}
+};
 console.log(getNextpalindromeDate(date))
