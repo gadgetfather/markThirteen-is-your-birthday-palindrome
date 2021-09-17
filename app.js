@@ -51,7 +51,7 @@ function dateAllFormat(date){
 
 function checkPalidromeAll(date){
     var listOfPalindrome= dateAllFormat(date)
-    console.log(listOfPalindrome)
+    
     var isaPalindrome = false;
     for(var i = 0; i< listOfPalindrome.length;i++){
         if(isPalindrome(listOfPalindrome[i]))
@@ -137,9 +137,35 @@ function getNextpalindromeDate(date){
     }
     return [ctr,nextDate]
 }
-var date = {
-    day: 11,
-    month:2 ,
-    year:2021
+
+
+var dateInput = document.querySelector("#bday-input")
+var showBtn = document.querySelector("#show-btn")
+var outputEl = document.querySelector("#output")
+
+
+function clickHandler(){
+    var bdaystr = dateInput.value
+
+    if(bdaystr!==''){
+        var listOfDate = bdaystr.split('-')
+        var date = {
+            day:Number(listOfDate[2]),
+            month:Number(listOfDate[1]),
+            year:Number(listOfDate[0])
+        }
+        
+        var isPalindrome =checkPalidromeAll(date)
+
+        if(isPalindrome){
+            outputEl.innerText = "Yay your birthday is palindrome"
+        }
+        else{
+            var [ctr,nextDate]= getNextpalindromeDate(date)
+            outputEl.innerText=`the next palindrome day is ${nextDate.day}-${nextDate.month}-${nextDate.year} and you missed it by ${ctr} days`
+        }
+    }
+    
 }
-console.log(getNextpalindromeDate(date))
+
+showBtn.addEventListener('click',clickHandler)
