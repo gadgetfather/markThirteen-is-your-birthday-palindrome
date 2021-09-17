@@ -1,14 +1,11 @@
 function reversedStr(str) {
-    // var listOfChars = str.split('');
-    // var reverseListOfChars = listOfChars.reverse();
-    // var reversedStr = reverseListOfChars.join('');
-    // return reversedStr;
-
+    
     return str.split('').reverse().join('')
 }
 function isPalindrome(str)
 {
     var reverse = reversedStr(str)
+    
 
     return str === reverse
     
@@ -54,6 +51,7 @@ function dateAllFormat(date){
 
 function checkPalidromeAll(date){
     var listOfPalindrome= dateAllFormat(date)
+    console.log(listOfPalindrome)
     var isaPalindrome = false;
     for(var i = 0; i< listOfPalindrome.length;i++){
         if(isPalindrome(listOfPalindrome[i]))
