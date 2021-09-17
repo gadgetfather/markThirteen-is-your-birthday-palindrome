@@ -1,45 +1,45 @@
-function reverseStr(str){
-    var listofchars = str.split('');
-    var reversechars= listofchars.reverse()
-    var reverseOp = reversechars.join('')
-    return reverseOp
-}
+function reversedStr(str) {
+    // var listOfChars = str.split('');
+    // var reverseListOfChars = listOfChars.reverse();
+    // var reversedStr = reverseListOfChars.join('');
+    // return reversedStr;
 
+    return str.split('').reverse().join('')
+}
 function isPalindrome(str)
 {
-    var reverse = reverseStr(str)
+    var reverse = reversedStr(str)
 
     return str === reverse
     
-
 }
 
 
-function convertDatetoStr(date){
-    var dateStr = {day:'', month:"",year:''}
-
-    if(date.day<10){
-        dateStr.day = '0'+ date.day
-    }
-    else{
+function convertDateToStr(date) {
+    var dateStr = {
+        day: '',
+        month: '',
+        year: ''
+    };
+    if (date.day < 10) {
+        dateStr.day = '0' + date.day;
+    } else {
         dateStr.day = date.day.toString();
     }
-    if(date.month<10){
-        dateStr.month = '0'+ date.month
-    }
-    else{
+
+    if (date.month < 10) {
+        dateStr.month = '0' + date.month;
+    } else {
         dateStr.month = date.month.toString();
     }
-    
-    
+
     dateStr.year = date.year.toString();
 
     return dateStr;
-    
 }
 
-function dateAllFormat(){
-    var dateStr = convertDatetoStr(date);
+function dateAllFormat(date){
+    var dateStr = convertDateToStr(date);
 
     var ddmmyyyy = dateStr.day + dateStr.month+ dateStr.year
     var mmddyyyy = dateStr.month+ dateStr.day + dateStr.year
@@ -54,8 +54,6 @@ function dateAllFormat(){
 
 function checkPalidromeAll(date){
     var listOfPalindrome= dateAllFormat(date)
-    console.log(listOfPalindrome)
-
     var isaPalindrome = false;
     for(var i = 0; i< listOfPalindrome.length;i++){
         if(isPalindrome(listOfPalindrome[i]))
@@ -67,9 +65,6 @@ function checkPalidromeAll(date){
     return isaPalindrome
 }
 
-function getNextPalindrome(date){
-
-}
 
 function isLeapYear(year){
     if(year%400===0){
@@ -145,8 +140,8 @@ function getNextpalindromeDate(date){
     return [ctr,nextDate]
 }
 var date = {
-    day: 31,
-    month:12 ,
-    year:2020
+    day: 11,
+    month:2 ,
+    year:2021
 }
 console.log(getNextpalindromeDate(date))
