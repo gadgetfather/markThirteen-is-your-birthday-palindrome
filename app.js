@@ -51,9 +51,25 @@ function dateAllFormat(){
     return [ddmmyyyy,mmddyyyy,yyyymmdd,ddmmyy,mmddyy,yymmdd]
 }
 
-var date = {
-    day: 2,
-    month:12,
-    year:2202
+
+function checkPalidromeAll(date){
+    var listOfPalindrome= dateAllFormat(date)
+    console.log(listOfPalindrome)
+
+    var isaPalindrome = false;
+    for(var i = 0; i< listOfPalindrome.length;i++){
+        if(isPalindrome(listOfPalindrome[i]))
+        {
+            isaPalindrome= true;
+            break;
+        }
+    }
+    return isaPalindrome
 }
-console.log(dateAllFormat(date))
+
+var date = {
+    day: 11,
+    month:11,
+    year:1111
+}
+console.log(checkPalidromeAll(date))
