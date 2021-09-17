@@ -129,9 +129,24 @@ function getNextDate(date){
 
 }
 
+function getNextpalindromeDate(date){
+    var ctr = 0
+    var nextDate = getNextDate(date);
+
+    while(1){
+        ctr++
+        var isPalindrome = checkPalidromeAll(nextDate)
+        if (isPalindrome){
+            break;
+        }
+        nextDate = getNextDate(nextDate)
+
+    }
+    return [ctr,nextDate]
+}
 var date = {
     day: 31,
-    month:12,
+    month:12 ,
     year:2020
 }
-console.log(getNextDate(date))
+console.log(getNextpalindromeDate(date))
