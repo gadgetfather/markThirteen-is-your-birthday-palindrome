@@ -3,3 +3,10 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    max-width: 500px;
+    margin: auto;
+    padding-top: 50px;
+    font-size: 300%;
+    
+}
