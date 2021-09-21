@@ -8,5 +8,26 @@ body{
     margin: auto;
     padding-top: 50px;
     font-size: 300%;
-    
+    background-color: #DCD1ED;
+}
+h3{
+    text-align: center;
+}
+input{
+    display: block;
+    padding: 1rem;
+    margin-top: 30px;
+    margin-left: 15vh;
+}
+button{
+    margin: auto;
+    margin-left: 19vh;
+    padding: 1rem;
+    width: 7rem;
+    border-radius: 0.5rem;
+}
+
+#output{
+    text-align: center;
+    padding-top: 2rem;
 }
